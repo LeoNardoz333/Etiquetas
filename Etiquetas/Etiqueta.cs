@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ConectarRedReal;
 
 namespace Etiquetas
@@ -15,6 +16,7 @@ namespace Etiquetas
         public int Piezas { get; set; }
         public float Ancho { get; set; }
         public float Altura { get; set; }
+        public string Tipo { get; set; }
         public void Borrar(int id)
         {
             b.comando("delete from Etiqueta where id = "+id);
@@ -22,7 +24,10 @@ namespace Etiquetas
 
         public void Crear()
         {
-            b.comando(string.Format("insert into Etiqueta values({0},{1},{2},{3})",fkProducto,Piezas,Ancho,Altura));
+            MessageBox.Show(string.Format("insert into Etiqueta values('{0}',{1},{2},{3},{4})"
+                , Tipo, fkProducto, Piezas, Ancho, Altura));
+            b.comando(string.Format("insert into Etiqueta(tipo,fkproducto,piezas,ancho,altura) values('{0}',{1},{2},{3},{4})"
+                ,Tipo, fkProducto,Piezas,Ancho,Altura));
         }
 
         public void Moficicar(int id)
@@ -35,6 +40,12 @@ namespace Etiquetas
         public DataSet Mostrar(string filtro)
         {
             return b.Obtener(string.Format("Select * from Etiqueta"),"Etiqueta");
+        }
+
+        public DataSet Producto()
+        {
+            return b.Obtener(string.Format("Select Datos.producto, Datos.folio from " +
+                "Datos"), "Etiqueta");
         }
     }
 }

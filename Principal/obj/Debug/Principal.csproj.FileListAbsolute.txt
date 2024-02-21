@@ -29,3 +29,5 @@ C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\obj\Debug\Principal.csproj.CopyComplete
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\obj\Debug\Principal.exe
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\obj\Debug\Principal.pdb
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\Crud.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\Crud.pdb

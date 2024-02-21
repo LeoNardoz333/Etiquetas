@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPiezas = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -91,23 +89,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Producto";
             // 
-            // txtPiezas
-            // 
-            this.txtPiezas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPiezas.Location = new System.Drawing.Point(223, 110);
-            this.txtPiezas.Name = "txtPiezas";
-            this.txtPiezas.Size = new System.Drawing.Size(159, 26);
-            this.txtPiezas.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Piezas";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(12, 189);
@@ -116,6 +97,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -134,8 +116,6 @@
             this.ClientSize = new System.Drawing.Size(409, 245);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtPiezas);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFecha);
@@ -145,6 +125,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddEtiquetas";
+            this.Text = "Agregar Productos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,8 +139,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPiezas;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
     }

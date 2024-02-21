@@ -16,6 +16,7 @@ namespace Principal
     {
         MProductos productos;
         Productos producto;
+        bool modificar = true;
         public FrmAddEtiquetas()
         {
             producto=new Productos();
@@ -25,10 +26,25 @@ namespace Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            producto.Folio = int.Parse(txtFolio.Text);
-            producto.Fecha = txtFecha.Text;
-            producto.Producto = txtProducto.Text;
-            producto.Crear();
+            if (modificar == false)
+            {
+                producto.Folio = int.Parse(txtFolio.Text);
+                producto.Fecha = txtFecha.Text;
+                producto.Producto = txtProducto.Text;
+                producto.Crear();
+            }
+            else
+            {
+                producto.Fecha = txtFecha.Text;
+                producto.Producto = txtProducto.Text;
+                producto.Moficicar(123);
+            }
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

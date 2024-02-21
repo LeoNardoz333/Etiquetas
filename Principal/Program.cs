@@ -12,7 +12,7 @@ namespace Principal
         [STAThread]
         static void Main()
         {
-            Application.Run(new FrmAddEtiquetas());
+            Application.Run(new FrmEtiquetas());
         }
     }
 }

@@ -1,19 +1,24 @@
-﻿using Etiquetas;
+﻿using Crud;
+using Etiquetas;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Manejador
 {
     public class MEtiquetas
     {
         Etiqueta Etiqueta = new Etiqueta();
-        public void Crear()
+        public void ExtraerProducto(ComboBox caja)
         {
-            Etiqueta.Crear();
+            caja.DataSource = Etiqueta.Producto().Tables["Etiqueta"];
+            caja.DisplayMember = "producto";
+            caja.ValueMember = "folio";
         }
     }
 }
