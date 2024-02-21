@@ -19,6 +19,9 @@ namespace Principal
         MEtiquetas mEtiqueta;
         MProductos mProducto;
         int fila, columna;
+        public static string Producto, Fecha;
+        public static int Folio;
+        public static bool modificar = false;
         public FrmEtiquetas()
         {
             producto = new Productos();
@@ -50,38 +53,33 @@ namespace Principal
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            modificar = false;
             FrmAddEtiquetas owo = new FrmAddEtiquetas();
             owo.ShowDialog();
+            Actualizar();
         }
 
         private void dtgEtiquetas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            producto.Folio= int.Parse(dtgEtiquetas.Rows[fila].Cells[0].Value.ToString());
-            producto.Fecha = dtgEtiquetas.Rows[fila].Cells[1].Value.ToString();
-            producto.Producto = dtgEtiquetas.Rows[fila].Cells[2].Value.ToString();
+            Folio= int.Parse(dtgEtiquetas.Rows[fila].Cells[0].Value.ToString());
+            Fecha = dtgEtiquetas.Rows[fila].Cells[1].Value.ToString();
+            Producto = dtgEtiquetas.Rows[fila].Cells[2].Value.ToString();
             switch (columna)
             {
                 case 3:
                     {
-                        herramientas.Opcion = 2;
-                        FrmHerramientasAdd owo = new FrmHerramientasAdd();
+                        modificar = true;
+                        FrmAddEtiquetas owo = new FrmAddEtiquetas();
                         owo.ShowDialog();
                         Actualizar();
                     }
                     break;
                 case 4:
                     {
-                        if (eliminar == false)
-                            MessageBox.Show("No tienes permisos para eliminar datos");
-                        else
-                        {
-                            herramientas.Opcion = 3;
-                            DialogResult rs = MessageBox.Show("¿Estás seguro que deseas eliminar a este usuario", "ATENCIÓN",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (rs == DialogResult.Yes)
-                                mh.manipularHerramientas(herramientas);
-                            Actualizar();
-                        }
+                        DialogResult rs = MessageBox.Show("¿Estás seguro que deseas eliminar este producto", "ATENCIÓN",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (rs == DialogResult.Yes)
+                            producto.Borrar(Folio);
                     }
                     break;
             }

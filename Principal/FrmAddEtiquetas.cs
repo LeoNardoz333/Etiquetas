@@ -16,17 +16,27 @@ namespace Principal
     {
         MProductos productos;
         Productos producto;
-        bool modificar = true;
         public FrmAddEtiquetas()
         {
             producto=new Productos();
             productos = new MProductos();
             InitializeComponent();
+            if (FrmEtiquetas.modificar == true)
+            {
+                txtFolio.Enabled = false;
+                txtFecha.Text = FrmEtiquetas.Fecha;
+                txtFolio.Text = FrmEtiquetas.Folio.ToString();
+                txtProducto.Text = FrmEtiquetas.Producto;
+            }
+            else
+            {
+                txtFolio.Enabled = true;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (modificar == false)
+            if (FrmEtiquetas.modificar == false)
             {
                 producto.Folio = int.Parse(txtFolio.Text);
                 producto.Fecha = txtFecha.Text;
@@ -37,7 +47,7 @@ namespace Principal
             {
                 producto.Fecha = txtFecha.Text;
                 producto.Producto = txtProducto.Text;
-                producto.Moficicar(123);
+                producto.Moficicar(FrmEtiquetas.Folio);
             }
             Close();
         }

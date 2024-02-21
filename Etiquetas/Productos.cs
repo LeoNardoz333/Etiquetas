@@ -28,8 +28,11 @@ namespace Etiquetas
 
         public void Moficicar(int id)
         {
+            MessageBox.Show(string.Format("update Datos set fecha='{0}', producto='{1}'"
+                + " where folio={2}"
+                , Fecha, Producto, id));
             b.comando(string.Format("update Datos set fecha='{0}', producto='{1}'"
-                + "where folio={2}"
+                + " where folio={2}"
                 , Fecha, Producto, id));
         }
 
