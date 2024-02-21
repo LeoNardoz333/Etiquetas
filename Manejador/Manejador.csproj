@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barras.cs" />
+    <Compile Include="MEtiquetas.cs" />
+    <Compile Include="MProductos.cs" />
     <Compile Include="QR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

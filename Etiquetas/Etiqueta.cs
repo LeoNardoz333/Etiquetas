@@ -20,7 +20,7 @@ namespace Etiquetas
             b.comando("delete from Etiqueta where id = "+id);
         }
 
-        public void Crear(dynamic entidad)
+        public void Crear()
         {
             b.comando(string.Format("insert into Etiqueta values({0},{1},{2},{3})",fkProducto,Piezas,Ancho,Altura));
         }

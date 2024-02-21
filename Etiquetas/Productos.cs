@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Etiquetas
 {
@@ -19,8 +20,9 @@ namespace Etiquetas
             b.comando("delete from Datos where id = " + id);
         }
 
-        public void Crear(dynamic entidad)
+        public void Crear()
         {
+            MessageBox.Show(string.Format("insert into Datos values({0},'{1}','{2}')", Folio, Fecha, Producto));
             b.comando(string.Format("insert into Datos values({0},'{1}','{2}')", Folio, Fecha, Producto));
         }
 

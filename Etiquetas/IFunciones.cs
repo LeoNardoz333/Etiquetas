@@ -9,7 +9,7 @@ namespace Etiquetas
 {
     public interface IFunciones
     {
-        void Crear(dynamic entidad);
+        void Crear();
         void Moficicar(int id);
         DataSet Mostrar(string filtro);
         void Borrar(int id);
