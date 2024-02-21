@@ -1,0 +1,2 @@
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\obj\Debug\Etiquetas.csproj.AssemblyReference.cache
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\obj\Debug\Etiquetas.csproj.CoreCompileInputs.cache
