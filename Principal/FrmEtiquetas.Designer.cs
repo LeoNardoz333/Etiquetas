@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEtiquetas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,11 +181,22 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(547, 305);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(109, 38);
+            this.btnGenerar.TabIndex = 24;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
             // FrmEtiquetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 400);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this.label6);
@@ -227,5 +239,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbProducto;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }

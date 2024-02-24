@@ -23,3 +23,6 @@ C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\obj\Debug\Manejador.pdb
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\bin\Debug\Crud.dll
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\bin\Debug\Crud.pdb
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\bin\Debug\itextsharp.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Manejador\bin\Debug\itextsharp.xml

@@ -19,3 +19,6 @@ C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\obj\Debug\Etiquetas.csproj.CopyComplete
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\obj\Debug\Etiquetas.dll
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\obj\Debug\Etiquetas.pdb
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\bin\Debug\itextsharp.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Etiquetas\bin\Debug\itextsharp.xml

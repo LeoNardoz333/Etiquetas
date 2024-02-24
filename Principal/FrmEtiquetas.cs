@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,9 @@ namespace Principal
             etiqueta.Piezas = int.Parse(txtPiezas.Text);
             etiqueta.Tipo = cmbTipo.Text;
             etiqueta.Crear();
+                PrintDocument pd = new PrintDocument();
+                pd.PrintPage += Pd_PrintPage;
+                pd.Print();
         }
 
         private void dtgEtiquetas_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +62,28 @@ namespace Principal
             owo.ShowDialog();
             Actualizar();
         }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            Zen.Barcode.Code128BarcodeDraw mGeneradorCB =
+           Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            if (cmbTipo.Text.Equals("Barra"))
+                {
+                pCodigo.BackgroundImage = mGeneradorCB.Draw(cmbProducto.SelectedValue.ToString(), 60);
+            }else if(cmbTipo.Text.Equals("QR"))
+            {
+
+            }
+        }
+
+        private void Pd_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(pCodigo.Width, pCodigo.Height);
+            pCodigo.DrawToBitmap(bm, new Rectangle(0, 0, pCodigo.Width, pCodigo.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+
+        }
+
 
         private void dtgEtiquetas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
