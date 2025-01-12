@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etiquetas", "Etiquetas\Etiquetas.csproj", "{DDF669CA-1AE3-40C2-982D-F0C0CBEB8E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{5CD125DA-8AD0-4D56-AC8B-DE09FB0171BC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Principal", "Principal\Principal.csproj", "{2E8B583F-FB4D-4C58-BF6B-3CFA78D88855}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manejador", "Manejador\Manejador.csproj", "{C00F6F25-C8D9-4186-AD0C-6F4849DF0689}"
@@ -21,10 +19,6 @@ Global
 		{DDF669CA-1AE3-40C2-982D-F0C0CBEB8E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDF669CA-1AE3-40C2-982D-F0C0CBEB8E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDF669CA-1AE3-40C2-982D-F0C0CBEB8E00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CD125DA-8AD0-4D56-AC8B-DE09FB0171BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CD125DA-8AD0-4D56-AC8B-DE09FB0171BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CD125DA-8AD0-4D56-AC8B-DE09FB0171BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CD125DA-8AD0-4D56-AC8B-DE09FB0171BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E8B583F-FB4D-4C58-BF6B-3CFA78D88855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E8B583F-FB4D-4C58-BF6B-3CFA78D88855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8B583F-FB4D-4C58-BF6B-3CFA78D88855}.Release|Any CPU.ActiveCfg = Release|Any CPU

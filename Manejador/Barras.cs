@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Manejador
 {
-    internal class Barras : IImprimir
+    public class Barras : IImprimir
     {
-        public void Imprimir(string tipo, string tamano)
+        MAlmacenar alm = new MAlmacenar();
+        public void Generar(float altura, float ancho, ComboBox producto, int piezas, string funcion, Panel panel, string tipo)
         {
-        }
-
-        public string tamano(float altura, float ancho)
-        {
-            return "";
-        }
-
-        public string tipo(string tipo, int piezas)
-        {
-            return "";
+            Zen.Barcode.Code128BarcodeDraw mGeneradorCB =
+            Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            if(funcion.Equals("guardar"))
+            {
+                alm.almacenar(altura,ancho,int.Parse(producto.SelectedValue.ToString()),piezas, tipo);
+            }
+            panel.BackgroundImage = mGeneradorCB.Draw(alm.mostrar(int.Parse(producto.SelectedValue.ToString()),
+                producto.Text,piezas), 60);
         }
     }
 }

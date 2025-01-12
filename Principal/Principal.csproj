@@ -55,6 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmVerEtiquetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerEtiquetas.Designer.cs">
+      <DependentUpon>FrmVerEtiquetas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="FrmAddEtiquetas.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,11 @@
       <DependentUpon>FrmEtiquetas.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmAddEtiquetas.resx">
@@ -76,6 +87,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEtiquetas.resx">
       <DependentUpon>FrmEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerEtiquetas.resx">
+      <DependentUpon>FrmVerEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

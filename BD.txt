@@ -1,0 +1,26 @@
+DROP DATABASE if EXISTS Etiquetas;
+create database Etiquetas;
+CREATE USER if NOT EXISTS 'userEtiquetador'@'localhost' IDENTIFIED BY 'chivas123';
+GRANT ALL PRIVILEGES ON Etiquetas.* TO 'userEtiquetador'@'localhost';
+FLUSH PRIVILEGES;
+USE Etiquetas;
+
+DROP TABLE if EXISTS Datos;
+CREATE TABLE if NOT EXISTS Datos(
+folio INT PRIMARY KEY AUTO_INCREMENT,
+fecha VARCHAR(25),
+producto VARCHAR(50));
+
+DROP TABLE if EXISTS Etiqueta;
+create table if not exists Etiqueta(
+id INT PRIMARY KEY AUTO_INCREMENT,
+tipo VARCHAR(15),
+fkproducto INT,
+piezas INT,
+ancho FLOAT,
+altura FLOAT,
+FOREIGN KEY(fkproducto) REFERENCES Datos(folio));
+
+CREATE VIEW v_etiquetas AS
+Select et.id, et.tipo, et.Piezas, et.ancho, et.altura, Datos.producto, Datos.folio from Datos, etiqueta 
+et where et.fkproducto = Datos.folio;

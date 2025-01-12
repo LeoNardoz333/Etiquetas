@@ -34,3 +34,6 @@ C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\Zen.Barcode.Core.dll
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\itextsharp.dll
 C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\itextsharp.xml
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\bin\Debug\QRCoder.dll
+C:\Users\Leo V\OneDrive\Documentos\Escuela\Programación\Innovación de software\Proyectos\Etiquetas\Principal\obj\Debug\Principal.FrmVerEtiquetas.resources

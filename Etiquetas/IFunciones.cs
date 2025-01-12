@@ -11,7 +11,7 @@ namespace Etiquetas
     {
         void Crear();
         void Moficicar(int id);
-        DataSet Mostrar(string filtro);
+        DataSet Mostrar();
         void Borrar(int id);
     }
 }

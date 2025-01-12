@@ -24,20 +24,23 @@ namespace Etiquetas
 
         public void Crear()
         {
-            MessageBox.Show(string.Format("insert into Etiqueta values('{0}',{1},{2},{3},{4})"
-                , Tipo, fkProducto, Piezas, Ancho, Altura));
+            //MessageBox.Show(string.Format("insert into Etiqueta(tipo,fkproducto,piezas,ancho,altura) values('{0}',{1},{2},{3},{4})"
+                //, Tipo, fkProducto, Piezas, Ancho, Altura));
             b.comando(string.Format("insert into Etiqueta(tipo,fkproducto,piezas,ancho,altura) values('{0}',{1},{2},{3},{4})"
                 ,Tipo, fkProducto,Piezas,Ancho,Altura));
         }
 
         public void Moficicar(int id)
         {
-            b.comando(string.Format("update Etiqueta set fkProducto={0}, piezas={1}, ancho={2}, altura={3}"
-                +"where id={4}"
-                , fkProducto, Piezas, Ancho, Altura, id));
+            MessageBox.Show(string.Format("update Etiqueta set fkProducto={0}, piezas={1}, ancho={2}, altura={3}, tipo='{4}' "
+                + "where id={5}"
+                , fkProducto, Piezas, Ancho, Altura, Tipo, id));
+            b.comando(string.Format("update Etiqueta set fkProducto={0}, piezas={1}, ancho={2}, altura={3}, tipo='{4}' "
+                +"where id={5}"
+                , fkProducto, Piezas, Ancho, Altura, Tipo, id));
         }
 
-        public DataSet Mostrar(string filtro)
+        public DataSet Mostrar()
         {
             return b.Obtener(string.Format("Select * from Etiqueta"),"Etiqueta");
         }
@@ -46,6 +49,11 @@ namespace Etiquetas
         {
             return b.Obtener(string.Format("Select Datos.producto, Datos.folio from " +
                 "Datos"), "Etiqueta");
+        }
+
+        public DataSet MostrarCodigo(string filtro)
+        {
+            return b.Obtener(string.Format("Select * from v_etiquetas where producto like '%{0}%'",filtro), "etiqueta");
         }
     }
 }

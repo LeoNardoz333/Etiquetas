@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Etiquetas
 {
     public interface IImprimir
     {
-        void Imprimir(string tipo, string tamano);
-        string tamano(float altura, float ancho);
-        string tipo(string tipo, int piezas);
+        void Generar(float altura, float ancho, ComboBox producto, int piezas, string funcion, Panel panel, string tipo);
     }
 }

@@ -36,9 +36,9 @@ namespace Etiquetas
                 , Fecha, Producto, id));
         }
 
-        public DataSet Mostrar(string filtro)
+        public DataSet Mostrar()
         {
-            return b.Obtener(string.Format("Select * from Datos where producto like '%{0}%'", filtro), "Datos");
+            return b.Obtener("Select * from Datos", "Datos");
         }
     }
 }

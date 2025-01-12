@@ -40,6 +40,9 @@
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\..\..\..\..\..\Documents\qr\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -56,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barras.cs" />
+    <Compile Include="Condiciones.cs" />
+    <Compile Include="MAlmacenar.cs" />
     <Compile Include="MEtiquetas.cs" />
     <Compile Include="MProductos.cs" />
     <Compile Include="QR.cs" />

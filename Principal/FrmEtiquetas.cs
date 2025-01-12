@@ -19,12 +19,14 @@ namespace Principal
         Productos producto;
         MEtiquetas mEtiqueta;
         MProductos mProducto;
+        Condiciones condiciones;
         int fila, columna;
         public static string Producto, Fecha;
         public static int Folio;
         public static bool modificar = false;
         public FrmEtiquetas()
         {
+            condiciones = new Condiciones();
             producto = new Productos();
             etiqueta = new Etiqueta();
             mProducto = new MProductos();
@@ -34,15 +36,9 @@ namespace Principal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            etiqueta.Altura = int.Parse(txtAltura.Text);
-            etiqueta.Ancho = int.Parse(txtAncho.Text);
-            etiqueta.fkProducto=int.Parse(cmbProducto.SelectedValue.ToString());
-            etiqueta.Piezas = int.Parse(txtPiezas.Text);
-            etiqueta.Tipo = cmbTipo.Text;
-            etiqueta.Crear();
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += Pd_PrintPage;
-                pd.Print();
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += Pd_PrintPage;
+            pd.Print();
         }
 
         private void dtgEtiquetas_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -65,25 +61,80 @@ namespace Principal
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            Zen.Barcode.Code128BarcodeDraw mGeneradorCB =
-           Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            if (cmbTipo.Text.Equals("Barra"))
-                {
-                pCodigo.BackgroundImage = mGeneradorCB.Draw(cmbProducto.SelectedValue.ToString(), 60);
-            }else if(cmbTipo.Text.Equals("QR"))
+            if(FrmVerEtiquetas.funcion.Equals("modificar"))
             {
-
+                etiqueta.Altura = float.Parse(txtAltura.Text);
+                etiqueta.Ancho = float.Parse(txtAncho.Text);
+                etiqueta.Piezas = int.Parse(txtPiezas.Text);
+                etiqueta.Tipo = cmbTipo.Text;
+                etiqueta.fkProducto = int.Parse(cmbProducto.SelectedValue.ToString());
+                etiqueta.Moficicar(FrmVerEtiquetas.id);
             }
+            else
+            condiciones.evaluar(cmbTipo.Text,float.Parse(txtAltura.Text),float.Parse(txtAncho.Text)
+                ,cmbProducto,int.Parse(txtPiezas.Text), "guardar",pCodigo);
         }
 
         private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Bitmap bm = new Bitmap(pCodigo.Width, pCodigo.Height);
-            pCodigo.DrawToBitmap(bm, new Rectangle(0, 0, pCodigo.Width, pCodigo.Height));
+            Bitmap bm = new Bitmap(1000, 1000);
+            pCodigo.DrawToBitmap(bm, new Rectangle(0, 0, 1000, 1000));
             e.Graphics.DrawImage(bm, 0, 0);
 
         }
 
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            condiciones.evaluar(cmbTipo.Text, float.Parse(txtAltura.Text), float.Parse(txtAncho.Text)
+                , cmbProducto, int.Parse(txtPiezas.Text), "ver", pCodigo);
+        }
+
+        private void btnEtiquetas_Click(object sender, EventArgs e)
+        {
+            FrmVerEtiquetas et = new FrmVerEtiquetas();
+            et.ShowDialog();
+        }
+
+        private void FrmEtiquetas_Activated(object sender, EventArgs e)
+        {
+            if (FrmVerEtiquetas.funcion.Equals("cargar"))
+            {
+                txtAltura.Text = FrmVerEtiquetas.altura.ToString();
+                txtAncho.Text = FrmVerEtiquetas.ancho.ToString();
+                txtPiezas.Text = FrmVerEtiquetas.piezas.ToString();
+                cmbProducto.SelectedValue = FrmVerEtiquetas.folio;
+                cmbTipo.Text = FrmVerEtiquetas.tipo;
+                btnGenerar.Text = "Guardar";
+                btnCancelar.Text = "Limpiar";
+            }
+            else if (FrmVerEtiquetas.funcion.Equals("modificar"))
+            {
+                txtAltura.Text = FrmVerEtiquetas.altura.ToString();
+                txtAncho.Text = FrmVerEtiquetas.ancho.ToString();
+                txtPiezas.Text = FrmVerEtiquetas.piezas.ToString();
+                cmbProducto.SelectedValue = FrmVerEtiquetas.folio;
+                cmbTipo.Text = FrmVerEtiquetas.tipo;
+                btnCancelar.Text = "Cancelar";
+                btnGenerar.Text = "Actualizar";
+            }
+            else
+            {
+                btnGenerar.Text = "Actualizar";
+                btnCancelar.Text = "Limpiar";
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FrmVerEtiquetas.funcion = "";
+            txtAltura.Text = "";
+            txtAncho.Text = "";
+            txtPiezas.Text = "";
+            mEtiqueta.ExtraerProducto(cmbProducto);
+            cmbTipo.Text = "Barras";
+            btnCancelar.Text = "Limpiar";
+            btnGenerar.Text = "Guardar";
+        }
 
         private void dtgEtiquetas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,6 +157,7 @@ namespace Principal
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (rs == DialogResult.Yes)
                             producto.Borrar(Folio);
+                        Actualizar();
                     }
                     break;
             }
@@ -114,6 +166,7 @@ namespace Principal
         private void FrmEtiquetas_Load(object sender, EventArgs e)
         {
             mEtiqueta.ExtraerProducto(cmbProducto);
+            FrmVerEtiquetas.funcion = "";
             Actualizar();
         }
     }

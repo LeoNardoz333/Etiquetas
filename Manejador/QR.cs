@@ -7,30 +7,26 @@ using iTextSharp.text.pdf;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
+using QRCoder;
 
 namespace Manejador
 {
     public class QR : IImprimir
     {
-        public void Imprimir(string tipo, string tamano)
+        MAlmacenar alm = new MAlmacenar();
+        public void Generar(float altura, float ancho, ComboBox producto, int piezas, string funcion,
+            Panel panel, string tipo)
         {
-            Document doc = new Document(PageSize.A4);
-            PdfWriter.GetInstance(doc, new FileStream(@"C:\Users\emman\Escritorio", FileMode.Create));
-            doc.Open();
-            BarcodeQRCode barcodeQRCode = new BarcodeQRCode(String.Format("{0}", tipo), 1000, 1000, null);
-            Image qrImage = barcodeQRCode.GetImage();
-            qrImage.ScaleAbsolute(100,100);
-            doc.Add(qrImage);
-            doc.Close();
-        }
-        public string tamano(float altura, float ancho)
-        {
-            return "";
-        }
-
-        public string tipo(string tipo, int piezas)
-        {
-            return "";
+            QRCodeGenerator QRgen = new QRCodeGenerator();
+            if (funcion.Equals("guardar"))
+            {
+                alm.almacenar(altura, ancho, int.Parse(producto.SelectedValue.ToString()), piezas, tipo);
+            }
+            var QRDatos = QRgen.CreateQrCode(alm.mostrar(int.Parse(producto.SelectedValue.ToString()),
+                producto.Text, piezas), QRCodeGenerator.ECCLevel.H);
+            var QRCode = new QRCode(QRDatos);
+            panel.BackgroundImage = QRCode.GetGraphic(50);
         }
     }
 }

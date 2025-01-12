@@ -18,7 +18,9 @@ namespace Manejador
         {
             tabla.Columns.Clear();
             tabla.RowTemplate.Height = 30;
-            tabla.DataSource = productos.Mostrar("").Tables["Datos"];
+            tabla.DataSource = productos.Mostrar().Tables["Datos"];
+            tabla.Columns[1].Width = 136;
+            tabla.Columns[2].Width = 130;
             tabla.Columns.Insert(3, g.Boton("Editar", Color.Green));
             tabla.Columns.Insert(4, g.Boton("Borrar", Color.Red));
         }
